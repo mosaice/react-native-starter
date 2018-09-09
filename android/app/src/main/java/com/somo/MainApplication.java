@@ -3,6 +3,14 @@ package com.somo;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
+import com.react.rnspinkit.RNSpinkitPackage;
+import com.beefe.picker.PickerViewPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
+import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
+import com.RNFetchBlob.RNFetchBlobPackage;
+import com.microsoft.codepush.react.CodePush;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -14,6 +22,12 @@ import java.util.List;
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+
+        @Override
+        protected String getJSBundleFile() {
+        return CodePush.getJSBundleFile();
+        }
+    
     @Override
     public boolean getUseDeveloperSupport() {
       return BuildConfig.DEBUG;
@@ -22,7 +36,15 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage()
+          new MainReactPackage(),
+            new VectorIconsPackage(),
+            new SplashScreenReactPackage(),
+            new RNSpinkitPackage(),
+            new PickerViewPackage(),
+            new LinearGradientPackage(),
+            new RNI18nPackage(),
+            new RNFetchBlobPackage(),
+            new CodePush(BuildConfig.CODEPUSH_KEY, getApplicationContext(), BuildConfig.DEBUG)
       );
     }
 

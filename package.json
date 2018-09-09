@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
+    "i18n": "npx i18next -r src/ -o src/translations/ -l en,zh --fileFilter '*.ts,*.tsx'  --directoryFilter '!.git, !node_modules, !build'"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -34,6 +37,7 @@
     "@types/react": "^16.4.13",
     "@types/react-native": "^0.56.17",
     "@types/react-native-elements": "^0.18.0",
+    "@types/react-native-i18n": "^2.0.0",
     "@types/react-navigation": "^2.0.19",
     "babel-preset-react-native": "^5",
     "react-native-typescript-transformer": "^1.2.10",
