@@ -149,12 +149,12 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-device-info')
     compile project(':react-native-vector-icons')
     compile project(':react-native-splash-screen')
     compile project(':react-native-spinkit')
     compile project(':react-native-picker')
     compile project(':react-native-linear-gradient')
-    compile project(':react-native-i18n')
     compile project(':react-native-fetch-blob')
     compile project(':react-native-code-push')
     compile fileTree(dir: "libs", include: ["*.jar"])
