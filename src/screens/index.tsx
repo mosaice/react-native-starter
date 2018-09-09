@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import '../utils/i18n';
 import {
   translate,
@@ -25,11 +26,13 @@ class App extends Component<
 
   changeLang = () => {
     const { i18n } = this.props;
+    console.log(i18n);
     const newLang = i18n.language.includes('zh') ? 'en' : 'zh';
     i18n.changeLanguage(newLang);
   };
   render() {
-    const { t, i18n } = this.props;
+    const { t } = this.props;
+    console.log(EStyleSheet.value('$primary'));
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>{t('Press Cmd+R to reload')}</Text>
@@ -41,7 +44,7 @@ class App extends Component<
   }
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -55,8 +58,8 @@ const styles = StyleSheet.create({
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
+    marginBottom: 5,
+    color: '$primary'
   }
 });
 

@@ -1,3 +1,5 @@
+import './utils/storage';
+import './utils/styles';
 import React, { Component } from 'react';
 import Screen from './screens';
 import { I18nextProvider } from 'react-i18next';

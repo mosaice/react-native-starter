@@ -1631,6 +1631,10 @@ crypto-js@^3.1.9-1:
   version "3.1.9-1"
   resolved "http://registry.npm.taobao.org/crypto-js/download/crypto-js-3.1.9-1.tgz#fda19e761fc077e01ffbfdc6e9fdfc59e8806cd8"
 
+css-mediaquery@^0.1.2:
+  version "0.1.2"
+  resolved "http://registry.npm.taobao.org/css-mediaquery/download/css-mediaquery-0.1.2.tgz#6a2c37344928618631c54bd33cedd301da18bea0"
+
 csstype@^2.2.0:
   version "2.5.6"
   resolved "http://registry.npm.taobao.org/csstype/download/csstype-2.5.6.tgz#2ae1db2319642d8b80a668d2d025c6196071e788"
@@ -3495,6 +3499,10 @@ object-copy@^0.1.0:
     define-property "^0.2.5"
     kind-of "^3.0.3"
 
+object-resolve-path@^1.1.0:
+  version "1.1.1"
+  resolved "http://registry.npm.taobao.org/object-resolve-path/download/object-resolve-path-1.1.1.tgz#a7f8f93e8a20af80e44217ba7db54316d9d12232"
+
 object-visit@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/object-visit/download/object-visit-1.0.1.tgz#f79c4493af0c5377b59fe39d395e41042dd045bb"
@@ -3951,6 +3959,13 @@ react-native-elements@^1.0.0-beta5:
     prop-types "^15.5.8"
     react-native-touchable-scale "2.0.0"
 
+react-native-extended-stylesheet@^0.9.0:
+  version "0.9.0"
+  resolved "http://registry.npm.taobao.org/react-native-extended-stylesheet/download/react-native-extended-stylesheet-0.9.0.tgz#e427283153586f873616d0258ab8a8420854e9b5"
+  dependencies:
+    css-mediaquery "^0.1.2"
+    object-resolve-path "^1.1.0"
+
 react-native-fetch-blob@^0.10.8:
   version "0.10.8"
   resolved "http://registry.npm.taobao.org/react-native-fetch-blob/download/react-native-fetch-blob-0.10.8.tgz#4fc256abae0cb5f10e7c41f28c11b3ff330d72a9"
@@ -3999,6 +4014,10 @@ react-native-spinkit@^1.1.1:
 react-native-splash-screen@^3.1.1:
   version "3.1.1"
   resolved "http://registry.npm.taobao.org/react-native-splash-screen/download/react-native-splash-screen-3.1.1.tgz#1a4e46c9fdce53ff52af2a2cb4181788c4e30b30"
+
+react-native-storage@^0.2.2:
+  version "0.2.2"
+  resolved "http://registry.npm.taobao.org/react-native-storage/download/react-native-storage-0.2.2.tgz#4449197f122b2da0650e3704e1f050260ed58d9f"
 
 react-native-tab-view@^0.0.77:
   version "0.0.77"
