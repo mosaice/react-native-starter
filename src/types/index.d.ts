@@ -18,6 +18,7 @@ declare module 'react-native-picker';
 declare module 'react-native-tab-view';
 declare module 'moment/locale/zh-cn';
 declare module 'moment/src/lib/locale/en';
+declare module 'react-native-spinkit';
 
 declare module 'react-native-extended-stylesheet' {
   import {

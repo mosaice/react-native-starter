@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import { Platform, Text, View } from 'react-native';
-import { Button } from 'react-native-elements';
+import Button from '../components/Button';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import '../utils/i18n';
+import React, { Component } from 'react';
 import {
-  translate,
+  InjectedI18nProps,
   InjectedTranslateProps,
-  InjectedI18nProps
+  translate
 } from 'react-i18next';
+import { Platform, Text, View } from 'react-native';
 
 interface Props {}
 
@@ -32,13 +31,13 @@ class App extends Component<
   };
   render() {
     const { t } = this.props;
-    console.log(EStyleSheet.value('$primary'));
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>{t('Press Cmd+R to reload')}</Text>
         <Text style={styles.instructions}>To get started, edit App.tsx</Text>
         <Text style={styles.instructions}>{this.instructions}</Text>
-        <Button onPress={this.changeLang} title="BUTTON" />
+        <Button raised onPress={this.changeLang} title="BUTTON" />
       </View>
     );
   }
@@ -49,10 +48,10 @@ const styles = EStyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF'
+    backgroundColor: '#333'
   },
   welcome: {
-    fontSize: 20,
+    fontSize: '1rem',
     textAlign: 'center',
     margin: 10
   },
