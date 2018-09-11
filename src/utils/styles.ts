@@ -1,5 +1,5 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
-import { rem } from '../utils/scale';
+import { rem } from 'src/utils/scale';
 
 EStyleSheet.build({
   $primary: 'black',

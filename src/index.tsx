@@ -1,13 +1,13 @@
-import './utils/styles';
-import './utils/storage';
-import './utils/i18n';
+import 'src/utils/styles';
+import 'src/utils/storage';
+import 'src/utils/i18n';
 import codePush from 'react-native-code-push';
-import i18n from './utils/i18n';
-import Loading from './components/Loading';
+import i18n from 'src/utils/i18n';
+import Loading from 'src/components/Loading';
 import React, { Component } from 'react';
-import Screen from './screens';
+import Screen from 'src/screens';
 import SplashScreen from 'react-native-splash-screen';
-import store from './store';
+import store from 'src/store';
 import { I18nextProvider } from 'react-i18next';
 import { Platform, StatusBar } from 'react-native';
 import { Provider } from 'mobx-react';
@@ -16,7 +16,6 @@ type State = Readonly<{
   init: boolean;
 }>;
 class App extends Component<{}, State> {
-
   state: State = {
     init: false
   };

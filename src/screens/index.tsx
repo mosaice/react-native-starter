@@ -1,4 +1,4 @@
-import {  Button, Text } from 'native-base';
+import { Button, Text } from 'native-base';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import React, { Component } from 'react';
 import {
@@ -7,18 +7,18 @@ import {
   translate
 } from 'react-i18next';
 import { Platform, View } from 'react-native';
-import { observer, inject} from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 
-type Props = {}
+type Props = {};
 
 type InjectProps = Partial<{
-  dataA: DataStore.DataA,
-  root: DataStore.Root
-}>
+  dataA: DataStore.DataA;
+  root: DataStore.Root;
+}>;
 
 type P = Props & InjectedTranslateProps & InjectedI18nProps & InjectProps;
 
-@inject((store: Store) => ({dataA: store.root.dataA, root: store.root}))
+@inject((store: Store) => ({ dataA: store.root.dataA, root: store.root }))
 @observer
 class App extends Component<P, {}> {
   instructions = Platform.select({
@@ -27,8 +27,7 @@ class App extends Component<P, {}> {
       'Double tap R on your keyboard to reload,\n' +
       'Shake or press menu button for dev menu'
   });
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   changeLang = () => {
     const { i18n } = this.props;
@@ -43,8 +42,15 @@ class App extends Component<P, {}> {
         <Text style={styles.welcome}>{t('Press Cmd+R to reload')}</Text>
         <Text style={styles.instructions}>To get started, edit App.tsx</Text>
         <Text style={styles.instructions}>{this.instructions}</Text>
-        <Button onPress={this.props.dataA.increase} primary><Text>{this.props.dataA.count}</Text></Button>
-        <Button onPress={this.props.root.init} primary><Text>reset</Text></Button>
+        <Button onPress={this.changeLang} dark>
+          <Text>change language</Text>
+        </Button>
+        <Button onPress={this.props.dataA.increase} primary>
+          <Text>{this.props.dataA.count}</Text>
+        </Button>
+        <Button onPress={this.props.root.init} primary>
+          <Text>reset</Text>
+        </Button>
       </View>
     );
   }
@@ -55,7 +61,7 @@ const styles = EStyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#333'
+    backgroundColor: '#ddd'
   },
   welcome: {
     fontSize: '1rem',

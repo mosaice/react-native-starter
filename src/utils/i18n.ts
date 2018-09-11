@@ -1,5 +1,5 @@
 import i18next, { i18n } from 'i18next';
-import resources from '../translations';
+import resources from 'src/translations';
 import { reactI18nextModule } from 'react-i18next';
 import DeviceInfo from 'react-native-device-info';
 import moment from 'moment';
