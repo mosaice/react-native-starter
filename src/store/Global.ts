@@ -1,6 +1,6 @@
 import { action, observable } from 'mobx';
 
-export class GlobalStore {
+export default class GlobalStore {
   @observable
   loading = false;
   @observable
@@ -25,8 +25,4 @@ export class GlobalStore {
     this.message = message;
   }
 
-  @action
-  setCodePush(msg: any) {
-    this.codePushMessage = msg;
-  }
 }

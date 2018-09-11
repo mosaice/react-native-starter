@@ -1,4 +1,4 @@
-import Button from '../components/Button';
+import {  Button, Text } from 'native-base';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import React, { Component } from 'react';
 import {
@@ -6,13 +6,21 @@ import {
   InjectedTranslateProps,
   translate
 } from 'react-i18next';
-import { Platform, Text, View } from 'react-native';
+import { Platform, View } from 'react-native';
+import { observer, inject} from 'mobx-react';
 
-interface Props {}
+type Props = {}
 
-class App extends Component<
-  Props & InjectedTranslateProps & InjectedI18nProps
-> {
+type InjectProps = Partial<{
+  dataA: DataStore.DataA,
+  root: DataStore.Root
+}>
+
+type P = Props & InjectedTranslateProps & InjectedI18nProps & InjectProps;
+
+@inject((store: Store) => ({dataA: store.root.dataA, root: store.root}))
+@observer
+class App extends Component<P, {}> {
   instructions = Platform.select({
     ios: 'Press Cmd+R to reload',
     android:
@@ -20,12 +28,10 @@ class App extends Component<
       'Shake or press menu button for dev menu'
   });
   componentDidMount() {
-    console.log(this.props);
   }
 
   changeLang = () => {
     const { i18n } = this.props;
-    console.log(i18n);
     const newLang = i18n.language.includes('zh') ? 'en' : 'zh';
     i18n.changeLanguage(newLang);
   };
@@ -37,7 +43,8 @@ class App extends Component<
         <Text style={styles.welcome}>{t('Press Cmd+R to reload')}</Text>
         <Text style={styles.instructions}>To get started, edit App.tsx</Text>
         <Text style={styles.instructions}>{this.instructions}</Text>
-        <Button raised onPress={this.changeLang} title="BUTTON" />
+        <Button onPress={this.props.dataA.increase} primary><Text>{this.props.dataA.count}</Text></Button>
+        <Button onPress={this.props.root.init} primary><Text>reset</Text></Button>
       </View>
     );
   }
